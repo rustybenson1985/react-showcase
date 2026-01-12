@@ -1,5 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion'
-import MolarMassCalculator from "../components/chemistry/MolarMassCalculator"
+import MolarMassCalculator from "../../components/chemistry/MolarMassCalculator"
 
 function ChemistryPage() {
     return (

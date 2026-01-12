@@ -1,4 +1,4 @@
-import DistributiveProperty from "../components/algebra/DistributiveProperty"
+import DistributiveProperty from "../../components/algebra/DistributiveProperty"
 import Accordion from "react-bootstrap/Accordion"
 
 function AlgebraPage() {

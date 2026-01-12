@@ -9,55 +9,43 @@ Context: You have a student (me) that is interested in all the same subjects tha
 
 **Project:** Multi-page educational website with React.
 
-**Core Concepts Covered & Practiced:**
+**Architectural Achievements:**
 
 *   **Project Structure & Refactoring:**
-    *   Initialized a React + TypeScript project using Vite.
-    *   Organized code into `pages` and `components` directories, and `hooks` for reusable logic.
-    *   Refactored features into dedicated page components (`AlgebraPage`, `ChemistryPage`).
+    *   Organized code into a scalable structure: `pages`, `components`, `hooks`, `context`, and `scss`.
+    *   Refactored complex stateful logic into a reusable **Custom Hook** (`useMolarMass`), demonstrating a key modern React pattern.
 
-*   **Asynchronous JavaScript & React Hooks:**
-    *   `useState`: Managed component state, refactored from primitives to objects, and used TypeScript generics (`<Type[]>`) for type safety.
-    *   `useEffect`: Performed side effects, specifically fetching data with `fetch` and `async/await`, and for data persistence with `localStorage`.
+*   **Global State Management:**
+    *   Used **React's Context API** (`createContext`, `useContext`) to provide and consume app-wide state for the theme switcher.
 
-*   **Advanced JS & ES6:**
-    *   **ES6 Modules:** Practiced `export default` and `import` for components, pages, and hooks.
-    *   **Immutability & Spread Operator:** Used for safe state object updates.
-    *   **Object Destructuring:** For cleaner code when accessing state and props.
-    *   **Higher-Order Functions:** Used `.map()` to render lists of components from arrays, and `.reduce()` for aggregate calculations.
+*   **Advanced Styling & Theming Engine:**
+    *   Integrated **Sass (`.scss`)** into the Vite build process.
+    *   Architected and implemented a powerful "Theming Engine" using Sass Maps (`$themes`) and `@each` loops to generate multiple, dynamic CSS variable-based themes at build time.
+    *   Mastered the hybrid approach of using Sass for build-time configuration and CSS Variables for runtime dynamic switching.
+    *   Solved complex CSS specificity issues by generating Bootstrap's own CSS variables (`--bs-*`) within scoped theme selectors (`[data-bs-theme='...']`).
 
-*   **Routing (`react-router-dom`):**
-    *   Installed and configured client-side routing with `BrowserRouter`, `Routes`, and `Route`.
-    *   Created a reusable `MainNavbar` component with `Link` for seamless navigation.
+*   **Version Control (Git):**
+    *   Initialized a Git repository and performed the initial commit, establishing a project baseline.
 
-*   **Styling & UI (`react-bootstrap`):**
-    *   Installed and configured `react-bootstrap` globally.
-    *   Refactored UI with components like `Navbar`, `Card`, `Form`, `Row`, `Col`, `Accordion`, and `Alert`.
-    *   Integrated routing with `react-bootstrap` using `react-router-bootstrap`.
+*(Note: Many other foundational concepts like `useState`, `useEffect`, `fetch`, `react-router-dom`, TypeScript interfaces, etc., are also covered but are now part of the established workflow).*
 
-*   **TypeScript:**
-    *   Defined `interface` for props and state objects, and `type` aliases for complex object shapes (e.g., `AtomicMasses`, `ElementCounts`).
-    *   Analyzed and understood advanced types including **Index Signatures**.
-    *   Clarified that the `number` type covers both integers and floats.
-    *   Installed `@types/` packages for third-party libraries.
+---
+## Deployment & Project Finalization Roadmap
 
-*   **Development & Debugging:**
-    *   Used `console.log` to inspect data structures.
-    *   Addressed subtle UI bugs like the scrollbar "jump" with global CSS.
-    *   Implemented robust UI error handling for invalid user input and data fetching issues.
+**1. Current Task: Finalize & Commit**
+*   Polish the `main.scss` theming engine.
+*   Make a new Git commit to save the completed theming system.
 
-**Completed Features:**
+**2. Next Steps: GitHub Integration**
+*   Create a `README.md` file for the project.
+*   Create a new repository on GitHub.
+*   Connect the local Git repository to the remote GitHub repository and push the code.
 
-*   **Algebra Page - Distributive Property Calculator:**
-    *   Interactive calculator with state management.
-    *   Displays results and verifies property.
-    *   Calculates and displays a summary of problems (total, average of left-side calculation).
-*   **Chemistry Page - Molar Mass Calculator:**
-    *   Fetches atomic mass data asynchronously.
-    *   Parses chemical formulas (including parentheses and coefficients).
-    *   Calculates total molar mass.
-    *   Persists user's formula input across sessions using `localStorage`.
-    *   Provides user feedback for errors.
+**3. Deployment to GitHub Pages:**
+*   Install and configure `gh-pages` to deploy the Vite application.
+*   Publish the application to a live website.
 
-**Current Task:**
-*   Refactoring complex component logic from `MolarMassCalculator` into a reusable **Custom Hook (`useMolarMass`)**, including moving related helper functions (`parseFormula`, `calculateMolarMass`).
+**4. Future Features:**
+*   Create a "Programming" section with a lesson on JavaScript `scope`.
+*   Explore and implement a testing framework like Vitest.
+*   Address the desire for a global state history / undo-redo system (long-term goal).

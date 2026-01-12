@@ -1,0 +1,848 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+/* if a variable is set with another variable:
+// let's say you have $var1: var($var2)
+// and you don't want to change $var2
+
+// one option (or maybe the only option)
+// create a new var: $var3,
+// set: $var1: var($var3),
+// now when you change $var3 it will override $var2
+// without changing $var2
+
+// you cannot change $var1 by setting it to a value directly:
+// $var1: #fff -> this will get overridden by $var2
+
+// gemini can you explain this behavior -> don't be afraid to
+// say you don't know if you don't know
+
+// after some discussion with gemini,
+// the only other option is to create a rule in css
+// that meets or exceeds specificity of the css rule set by bootstrap
+// (which defeats the purpose of re-defining variables
+// before bootstrap is fully loaded) */
+
+// re-defining bootstrap variables
+
+$themes: (
+    "dark-purple": (
+        "body-bg": hsl(280deg, 30%, 20% / 1),
+        "body-color": $gray-100,
+        // link, link:focus color
+        "emphasis-color-rgb": hsl(130deg, 100%, 40% / 1),
+        // dropdown link:hover bg
+        "tertiary-bg": hsl(280deg, 30%, 40% / 1)
+    ),
+    "ocean-blue": (
+        "body-bg": hsl(240deg, 30%, 20% / 1),
+        "body-color": $gray-100,
+        // link, link:focus color
+        "emphasis-color-rgb": hsl(130deg, 100%, 40% / 1),
+        // dropdown link:hover bg
+        "tertiary-bg": hsl(240deg, 30%, 40% / 1)
+    ),
+    "forest-green": (
+        "body-bg": hsl(130deg, 30%, 20% / 1),
+        "body-color": $gray-100,
+        // link, link:focus color
+        "emphasis-color-rgb": hsl(130deg, 100%, 40% / 1),
+        // dropdown link:hover bg
+        "tertiary-bg": hsl(130deg, 30%, 40% / 1)
+    )
+);
+
+@each $theme-name, $theme-map in $themes {
+    [data-bs-theme="#{$theme-name}"] {
+        @each $color-key, $color-value in $theme-map {
+            // override bootstrap variables
+            --bs-#{$color-key}: #{$color-value};
+            // copy of map to be used for other purposes
+            --rb-#{$color-key}: #{$color-value};
+        }
+    }
+}
+
+$box-shadow-sm: 1.5px 3px 3px hsl(0deg, 0%, 0% / 0.40);
+$box-shadow: 3px 6px 6px hsl(0deg, 0%, 0% / 0.40);
+
+// end of re-defining bootstrap variables
+
+@import "bootstrap/scss/bootstrap";
+
+:root
+{
+    overflow-y: scroll;
+}
+
+body
+{
+    margin-top: 4rem;
+}
+
+.accordion
+{
+    box-shadow: var(--bs-box-shadow);
+}
+
+.form-control
+{
+    box-shadow: var(--bs-box-shadow-sm);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/variables-dark";
+// @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/root";
+// @import "bootstrap/scss/reboot";
+// @import "bootstrap/scss/type";
+// // @import "bootstrap/scss/images";
+// @import "bootstrap/scss/containers";
+// @import "bootstrap/scss/grid";
+// // @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// // @import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// // @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// // @import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/breadcrumb";
+// // @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// // @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// // @import "bootstrap/scss/close";
+// // @import "bootstrap/scss/toasts";
+// // @import "bootstrap/scss/modal";
+// // @import "bootstrap/scss/tooltip";
+// // @import "bootstrap/scss/popover";
+// // @import "bootstrap/scss/carousel";
+// // @import "bootstrap/scss/spinners";
+// // @import "bootstrap/scss/offcanvas";
+// // @import "bootstrap/scss/placeholders";
+
+
+// @import "bootstrap/scss/helpers";
+
+
+// @import "bootstrap/scss/utilities/api";
+
+// @import "bootstrap/scss/bootstrap";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "bootstrap/scss/functions";
+ @import "bootstrap/scss/variables";
+//  @import "bootstrap/scss/variables-dark";
+
+
+//  @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/root";
+// @import "bootstrap/scss/reboot";
+// @import "bootstrap/scss/type";
+// // @import "bootstrap/scss/images";
+// @import "bootstrap/scss/containers";
+// @import "bootstrap/scss/grid";
+// // @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// // @import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// // @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// // @import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/breadcrumb";
+// // @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// // @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// // @import "bootstrap/scss/close";
+// // @import "bootstrap/scss/toasts";
+// // @import "bootstrap/scss/modal";
+// // @import "bootstrap/scss/tooltip";
+// // @import "bootstrap/scss/popover";
+// // @import "bootstrap/scss/carousel";
+// // @import "bootstrap/scss/spinners";
+// // @import "bootstrap/scss/offcanvas";
+// // @import "bootstrap/scss/placeholders";
+
+
+// @import "bootstrap/scss/helpers";
+
+
+// @import "bootstrap/scss/utilities/api";
+
+
+
+
+
+
+
+
+// $test-var: $green;
+
+// $accordion-bg: var(--bs-test-var);
+
+//  // 2. DEFINE YOUR THEME PALETTES AS SASS MAPS.
+//  // This is your single source of truth for all theme colors.
+//     $themes: (
+//       "light": (
+//         "primary": $blue,
+//         "secondary": $gray-600,
+//         "body-bg": $gray-100,
+//         "body-color": $gray-900,
+//         "accordion-bg": $white,
+//         "accordion-color": $gray-900,
+//         "dropdown-bg": $white,
+//         "dropdown-link-color": $gray-900,
+//         "dropdown-link-hover-bg": $gray-200
+//         //"emphasis-color-rgb":
+//         // ... add any other colors you want to control for this theme
+//       ),
+//       "dark": (
+//         "primary": #64FFDA,
+//         "secondary": #8892B0,
+//         // "body-bg": #79E0EE,
+//         // "body-bg": #000F52,
+//         "body-bg": #0076BE,
+//         "body-color": #CCD6F6,
+//         "tertiary-bg": lighten(#0A192F, 5%),
+//         "emphasis-color-rgb": to-rgb($gray-100),
+//         "success-bg-subtle": #48BF91,
+//         "success-text-emphasis": $gray-100,
+//         "box-shadow-color": rgba($white, .65),
+//         "primary-bg-subtle": #95D8EB,
+//         "primary-text-emphasis": $gray-700
+//         // ...
+//       ),
+//       "dark-purple": (
+//         "primary": #64FFDA,
+//         "secondary": #8892B0,
+//         // "body-bg": #79E0EE,
+//         // "body-bg": #000F52,
+//         "body-bg": #0076BE,
+//         "body-color": #CCD6F6,
+//         "tertiary-bg": lighten(#0A192F, 5%),
+//         "emphasis-color-rgb": to-rgb($gray-100),
+//         "success-bg-subtle": hsl(130deg, 100%, 10% / 1),
+//         "success-text-emphasis": $gray-100,
+//         "box-shadow-color": rgba($white, .65),
+//         "primary-bg-subtle": #95D8EB,
+//         "primary-text-emphasis": $gray-700
+//       ),
+//       "ocean-blue": (
+//         "primary": #64FFDA,
+//         "secondary": #8892B0,
+//         // "body-bg": #79E0EE,
+//         // "body-bg": #000F52,
+//         "body-bg": #0076BE,
+//         "body-color": #CCD6F6,
+//         "tertiary-bg": lighten(#0A192F, 5%),
+//         "emphasis-color-rgb": to-rgb($gray-100),
+//         "success-bg-subtle": #48BF91,
+//         "success-text-emphasis": $gray-100,
+//         "box-shadow-color": rgba($white, .65),
+//         "primary-bg-subtle": #95D8EB,
+//         "primary-text-emphasis": $gray-700
+//         // ...
+//       ),
+//       "forest-green": (
+//         // "primary": #64FFDA,
+//         // "secondary": #8892B0,
+//         // // "body-bg": #79E0EE,
+//         // // "body-bg": #000F52,
+//         "body-bg": hsl(30deg, 30%, 20% / 1),
+//         "body-color": #CCD6F6,
+//         "test-var": hsl(130deg, 40%, 40% / 1),
+//         "accordion-active-bg": #000,
+//         // "accordion-bg": hsl(130deg, 100%, 70% / 1),
+//         "tertiary-bg": lighten(#0A192F, 5%),
+//         "emphasis-color-rgb": hsl(130deg, 100%, 40% / 1),
+//         "success-bg-subtle": hsl(130deg, 100%, 10% / 1),
+//         "success-text-emphasis": $gray-100,
+//         "box-shadow-color": rgba($white, .65),
+//         "primary-bg-subtle": hsl(130deg, 100%, 20% / 1),
+//         "primary-text-emphasis": $gray-100
+//       )
+//     );
+   
+   
+//     // 3. THE MAGIC: A SASS LOOP TO GENERATE THE CSS.
+//     // This loop runs once when you build the project.
+//     @each $theme-name, $theme-map in $themes {
+//       // It creates a [data-bs-theme="..."] block for each theme in your map.
+//       [data-bs-theme="#{$theme-name}"] {
+//         // Inside, it loops through each color in that theme's map.
+//         @each $color-key, $color-value in $theme-map {
+//           // It then generates the correct Bootstrap CSS variable override.
+//           // e.g., for the 'dark' theme, it will create: --bs-primary: #6f42c1;
+//           --bs-#{$color-key}: #{$color-value};
+//         }
+//       }
+//     }
+
+
+
+// @import "bootstrap/scss/variables-dark";
+// @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/root";
+// @import "bootstrap/scss/reboot";
+// @import "bootstrap/scss/type";
+// // @import "bootstrap/scss/images";
+// @import "bootstrap/scss/containers";
+// @import "bootstrap/scss/grid";
+// // @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+// @import "bootstrap/scss/buttons";
+// // @import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// // @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// // @import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/breadcrumb";
+// // @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// // @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+// // @import "bootstrap/scss/close";
+// // @import "bootstrap/scss/toasts";
+// // @import "bootstrap/scss/modal";
+// // @import "bootstrap/scss/tooltip";
+// // @import "bootstrap/scss/popover";
+// // @import "bootstrap/scss/carousel";
+// // @import "bootstrap/scss/spinners";
+// // @import "bootstrap/scss/offcanvas";
+// // @import "bootstrap/scss/placeholders";
+
+
+// @import "bootstrap/scss/helpers";
+
+
+// @import "bootstrap/scss/utilities/api";
+   
+// $box-shadow-sm: 1.5px 3px 3px hsl(0deg, 0%, 0% / 0.40);
+// $box-shadow: 3px 6px 6px hsl(0deg, 0%, 0% / 0.40);
+//     // 4. Import the rest of Bootstrap.
+//     @import "bootstrap/scss/bootstrap";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// :root
+// {
+//     min-height: 200vh;
+//     overflow-y: scroll;
+
+//     // --box-shadow-sm: 1px 1px 5px;
+//     // --box-shadow: 5px 5px 15px;
+//     // --box-shadow-color: $black;
+
+//     //--bs-navbar-bg: black;
+
+//     // --nav-link-color: #{$gray-900};
+//     // --nav-link-hover-color: #{$gray-100};
+//     // --nav-link-hover-bg: #{$gray-700};
+
+//     // --alert-success-bg: #E8F5E9;
+//     // --alert-success-text: #1B5E20;
+//     // --alert-success-border: #A5D6A7;
+
+//     /*
+//     --theme-success-bg: #E8F5E9;
+//     8   --theme-success-text: #1B5E20;
+//     9   --theme-success-border: #A5D6A7;
+//    10   --theme-success-accent: #4CAF50;
+//     */
+// }
+
+// body
+// {
+//     margin-top: 4rem;
+// }
+
+// // body[data-bs-theme="light"]
+// // {
+// //     --bs-body-bg: #{$gray-100};
+// // }
+
+// body[data-bs-theme="dark"]
+// {
+//     // --box-shadow-color: var(--bs-box-shadow-color);
+//     // --box-shadow-color: rgba(255,255,255, 0.5);
+
+//     // --nav-link-color: #{$gray-100};
+//     // --nav-link-hover-color: #{$gray-100};
+//     // --nav-link-hover-bg: #{$gray-700};
+
+//     // --alert-success-bg: #0A2B1A;
+//     // --alert-success-text: #B9F6CA;
+//     // --alert-success-border: #004D40;
+
+//     /*
+//     --theme-success-bg: #0A2B1A;
+//     8   --theme-success-text: #B9F6CA;
+//     9   --theme-success-border: #004D40;
+//    10   --theme-success-accent: #69F0AE;
+//     */
+// }
+
+// // body[data-bs-theme="dark-purple"]
+// // {
+// //     --bs-body-bg: #{$purple-900};
+// //     --bs-body-color: #{$gray-100};
+// //     --box-shadow-color: rgba(255,255,255, 0.5);
+
+// //     --nav-link-color: #{$gray-100};
+// //     --nav-link-hover-color: #{$gray-100};
+// //     --nav-link-hover-bg: #{$purple-700};
+
+// //     --alert-success-bg: #0A2320;
+// //     --alert-success-text: #A7FFDE;
+// //     --alert-success-border: #004D40;
+
+// //     /*
+// //     --theme-success-bg: #0A2320;
+// //     8   --theme-success-text: #A7FFDE;
+// //     9   --theme-success-border: #004D40;
+// //    10   --theme-success-accent: #64FFDA;
+// //     */
+// // }
+
+// body[data-bs-theme="ocean-blue"]
+// {
+//     // background-color: rgba(var(--bs-box-shadow-color),0.5);
+//     // --box-shadow-color: var(--bs-box-shadow-color);
+// }
+
+// body[data-bs-theme="invert"]
+// {
+//     filter: invert(1);
+//     // background-color: rgba(var(--bs-box-shadow-color),0.5);
+//     // --box-shadow-color: var(--bs-box-shadow-color);
+// }
+
+// // .nav-link, .nav-link:focus
+// // {
+// //     color: var(--nav-link-color);
+// //     border-radius: 2px;
+// // }
+
+// // .nav-link:hover, .navbar-nav .nav-link.show,
+// // .dropdown-item:hover, .dropdown-item:focus
+// // {
+// //     color: var(--nav-link-hover-color);
+// //     background: var(--nav-link-hover-bg);
+// // }
+
+// .dropdown-menu[data-bs-popper]
+// {
+//     left: -2px;
+// }
+
+// .dropdown-menu-end[data-bs-popper]
+// {
+//     right: -2px;
+//     left: auto;
+// }
+
+// .accordion
+// {
+//     // box-shadow: var(--box-shadow) var(--box-shadow-color);
+// //    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1), 
+// //                0 15px 40px rgba(255, 255, 255, 0.05);
+//     // box-shadow: 6px 12px 12px hsl(0deg, 0%, 0% / 0.30);
+//     box-shadow: var(--bs-box-shadow);
+// }
+
+// .form-control, .form-control:focus
+// {
+//     background-color: rgb(255, 255, 255, .1);
+//     // background-color: rgb(0, 0, 0, .3);
+//     // filter: invert(1);
+// }
+
+// .form-control[type="text"]
+// {
+//     // box-shadow: 3px 6px 6px hsl(0deg, 0%, 0% / 0.30);
+//     box-shadow: var(--bs-box-shadow-sm);
+// }
+
+// // .alert-success
+// // {
+// //     background-color: var(--alert-success-bg);
+// //     color: var(--alert-success-text);
+// //     border-color: var(--alert-success-border);
+// // }
+
+// .navbar-expand .navbar-nav .nav-link
+// {
+//     padding-right: 1em;
+// }
+
+// .dropdown-toggle::after
+// {
+//     margin-left: 0.7em;
+//     vertical-align: 0.2em;
+// }
+
+// .dropdown-menu
+// {
+//     --bs-dropdown-padding-x: 1rem;
+//     --bs-dropdown-spacer: 0.5rem;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @import "bootstrap/scss/reboot";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/containers";
+// @import "bootstrap/scss/accordion";
+
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/forms";
+
+
+
+
+
+// // @import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/helpers";
+// @import "bootstrap/scss/grid";
+// @import "bootstrap/scss/root";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Required
+// @import "bootstrap/scss/functions";
+
+// // Default variable overrides
+// $body-bg: #000;
+// $body-color: #111;
+
+// // Required
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/mixins";
+
+// // Optional Bootstrap components here
+// @import "bootstrap/scss/root";
+// @import "bootstrap/scss/reboot";
+// @import "bootstrap/scss/type";
+// etc
+
+
+
+/*
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+example: $blue-100 - $blue-900 where $blue-500 is $blue
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+*/
+
+
+
+
+// @import "bootstrap/scss/bootstrap";
+
+// :root {
+//     // --theme-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2); // Light shadow
+//     // --theme-box-shadow-sm: 1px 1px 0px 0px rgba(0, 0, 0, 0.2); // Light shadow
+//     min-height: 200vh;
+//     overflow-y: scroll;
+
+//     // --theme-bg: $gray-900;
+
+//     --bs-body-bg: var(--bs-gray-900);
+//     --bs-body-bg: var(--bs-blue-900);
+// }
+
+// body[data-theme='default-light'] {
+//     // --bs-body-bg: $gray-100;
+//     // --bs-body-text: $gray-900;
+//     // --bs-border-color: black;
+//     // --bs-body-bg: var(--theme-bg);
+// }
+
+// body[data-theme='dark'] {
+//     // Define the dark theme color palette
+//     --theme-background: #212529;
+//     --theme-text: #f8f9fa;
+//     --theme-primary: #9B59B6;
+//     --theme-secondary: #8E44AD;       // A darker purple
+//     --theme-border-color: #495057;    // Dark border color
+//     --theme-box-shadow-sm: 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
+// }
+
+// body[data-theme='dark-purple'] {      
+//     // --theme-background: #212529;
+//     --bs-body-bg: #212529;
+//     --bs-body-color: #f8f9fa;
+//     --bs-primary: #9B59B6; // Our purple
+//     --bs-secondary: #8E44AD;       // A darker purple
+//     --bs-border-color: #495057;    // Dark border color
+//    --theme-box-shadow-sm: 1px 1px 0px 0px rgba(255, 255, 255, 0.1); // Light shadow on dark bg
+// }
+
+// body[data-theme='ocean-blue'] {
+//     --theme-background: #0A192F; // A dark blue
+//     --theme-text: #8892B0;   // A light grayish-blue
+//     --theme-primary: #64FFDA;   // A bright cyan/mint
+//     --theme-secondary: #8892B0;
+//    --theme-border-color: #233554;
+//    --theme-box-shadow-sm: 1px 1px 0px 0px rgba(100, 255, 218, 0.2);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// .accordion-header .accordion-button
+// {
+//     border: none;
+// }
+
+// .accordion-item
+// {
+//   border-color: var(--theme-border-color);
+//   box-shadow: var(--theme-box-shadow);
+// }
+
+// .form-control[type="text"]
+// {
+//   border-color: var(--theme-border-color);
+//   box-shadow: var(--theme-box-shadow-sm);
+// }
+
+// .navbar-expand .navbar-nav .nav-link
+// {
+//   padding-right: 1em;
+// }
+
+// .dropdown-toggle::after
+// {
+//   margin-left: 0.7em;
+//   vertical-align: 0.2em;
+// }
+
+// .dropdown-menu
+// {
+//   --bs-dropdown-padding-x: 1rem;
+//   --bs-dropdown-spacer: 0.5rem;
+// }
+
+// @import "bootstrap/scss/bootstrap";
+
+// body
+// {
+//   margin-top: 4rem;
+// }
