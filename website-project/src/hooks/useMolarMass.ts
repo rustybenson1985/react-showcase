@@ -94,7 +94,7 @@ export const useMolarMass = () => {
     useEffect(() => {
         const fetchElements = async () => {
             try {
-                const response = await fetch("elements.json")
+                const response = await fetch("/react-showcase/elements.json")
                 const json = await response.json()
                 setElementsData(json)
             } catch (error) {
